@@ -121,7 +121,7 @@
     z-index: 9999;
   }
   .main-nav {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: var(--color-sticky);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(5px);
     position: absolute;
@@ -156,7 +156,10 @@
   .nav-open .icon-mobile-nav[name="menu-outline"] {
     display: none;
   }
-
+  .nav-dark {
+    height: 4rem;
+    width: 4rem;
+  }
   .main-nav-list {
     flex-direction: column;
     gap: 4.8rem;
@@ -164,6 +167,9 @@
   .main-nav-link:link,
   .main-nav-link:visited {
     font-size: 3rem;
+  }
+  .nav-dark {
+    height: 4rem;
   }
   .footer-grid {
     column-gap: 3.2rem;

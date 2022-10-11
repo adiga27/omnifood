@@ -21,7 +21,16 @@ yearEl.textContent = currentYear;
 // Make mobile navigation work
 
 const btnNavEl = document.querySelector(".btn-mobile-nav");
+const btnNavtheme = document.querySelector(".dark-icon");
 const headerEl = document.querySelector(".header");
+const logos = document.querySelector(".logos");
+const logo = document.querySelector(".logo");
+const meal1 = document.querySelector(".meal-1");
+const meal2 = document.querySelector(".meal-2");
+const pricing1 = document.querySelector(".pricing-1");
+const pricing2 = document.querySelector(".pricing-2");
+const logo1 = document.querySelector(".logo-1");
+const logo2 = document.querySelector(".logo-2");
 
 btnNavEl.addEventListener("click", function () {
   headerEl.classList.toggle("nav-open");
@@ -55,6 +64,42 @@ allLinks.forEach(function (link) {
       headerEl.classList.toggle("nav-open");
   });
 });
+///////////////////////////////////////////////////////////
+// Dark Theme
+let darkMode = localStorage.getItem("darkMode");
+
+const enableDarkMode = () => {
+  document.body.classList.add("darkmode");
+  darkMode = localStorage.getItem("darkMode");
+  logos.style.filter = "greyscale(1)";
+  logos.style.filter = "invert(1)";
+  meal1.style.backgroundColor = "#291919";
+  meal2.style.backgroundColor = "#291919";
+  pricing1.style.backgroundColor = "#291919";
+  pricing2.style.backgroundColor = "#291919";
+  logo1.style.filter = "invert(1)";
+  logo2.style.filter = "invert(1)";
+  localStorage.setItem("darkMode", "enabled");
+};
+
+const disableDarkMode = () => {
+  document.body.classList.remove("darkmode");
+  darkMode = localStorage.getItem("darkMode");
+  logos.style.filter = "brightness(0)";
+  logo1.style.filter = "invert(0)";
+  logo2.style.filter = "invert(0)";
+  meal1.style.backgroundColor = "#fff";
+  meal2.style.backgroundColor = "#fff";
+  pricing1.style.backgroundColor = "#fff";
+  pricing2.style.backgroundColor = "##fdf2e9";
+  localStorage.setItem("darkMode", null);
+};
+btnNavtheme.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (darkMode !== "enabled") enableDarkMode();
+  else disableDarkMode();
+});
+
 ///////////////////////////////////////////////////////////
 // Sticky navigation
 

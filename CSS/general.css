@@ -22,16 +22,17 @@ large:1.8
 0.75px
 
 --02-COLOR--           
--Primary: #e67e22
--Tints:#fdf2e9,#fae5d3
--Shades:#cf711f,#45260a
+-Primary: var(--color-primary)
+-Tints:var(--color-tints-1),var(--color-tints-2)
+-Shades:var(--color-shades-1),var(--color-shades-2)
 -Accents:
 -Grey:
 #888
-#767676(lighest grey allowed on #fff)
+#767676(lighest grey allowed on var(--color-white))
 #6f6f6f(lighest grey allowed on #fdf2e9)
-#555
-#333;
+var(--color-grey-4)
+var(--color-grey-5);
+White: var(--color-white)
 
 --05-SHADOWS
 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075)
@@ -45,6 +46,44 @@ Medium:11px
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 
 */
+:root {
+  --color-primary: #e67e22;
+  --color-shades-1: #cf711f;
+  --color-shades-2: #45260a;
+  --color-tints-1: #fdf2e9;
+  --color-tints-2: #fae5d3;
+  --color-tints-3: #ddd;
+  --color-sticky: rgba(253, 242, 233, 0.8);
+  --color-white: #fff;
+  --color-grey-1: #888;
+  --color-grey-1: #522727;
+  --color-grey-2: #767676;
+  --color-grey-3: #6f6f6f;
+  --color-grey-4: #555;
+  --color-grey-5: #333;
+  --color-shadows-1: rgba(0, 0, 0, 0.075);
+  --color-shadows-2: rgba(0, 0, 0, 0.03);
+  --color-shadows-3: rgba(0, 0, 0, 0.06);
+  --color-shadows-4: rgba(0, 0, 0, 0.15);
+}
+
+.darkmode {
+  --color-tints-1: #171010;
+  --color-tints-2: #423f3e;
+  --color-tints-3: #2b2b2b;
+  --color-sticky: #362222;
+  --color-white: #111;
+  --color-grey-1: #ffcece;
+  --color-grey-2: #767676;
+  --color-grey-3: #9e6a6a;
+  --color-grey-4: #ddadad;
+  --color-grey-5: #ddd;
+  --color-shadows-1: none;
+  --color-shadows-2: none;
+  --color-shadows-3: none;
+  --color-shadows-4: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -58,7 +97,8 @@ body {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   line-height: 1;
-  color: #555;
+  background-color: var(--color-white);
+  color: var(--color-grey-4);
   overflow-x: hidden;
 }
 /* *************************** */
@@ -97,7 +137,7 @@ body {
 .heading-tertiary {
   font-weight: 700;
   line-height: 1.05;
-  color: #333;
+  color: var(--color-grey-5);
   letter-spacing: -0.5px;
 }
 .heading-primary {
@@ -119,7 +159,7 @@ body {
   display: block;
   font-size: 1.6rem;
   font-weight: 500;
-  color: #cf711f;
+  color: var(--color-shades-1);
   text-transform: uppercase;
   margin-bottom: 1.6rem;
   letter-spacing: 0.75px;
@@ -141,37 +181,37 @@ body {
 }
 .btn--full:link,
 .btn--full:visited {
-  background-color: #e67e22;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 .btn--full:hover,
 .btn--full:active {
-  background-color: #cf711f;
-  /* color: #fae5d3; */
+  background-color: var(--color-shades-1);
+  /* color: var(--color-tints-2); */
 }
 .btn--outline:link,
 .btn--outline:visited {
-  background-color: #fff;
+  background-color: #fae5d3;
   color: #555;
-  /* border: 3px solid #e67e22; */
-  /* box-shadow: inset 0 0 0 3px #e67e22; */
+  /* border: 3px solid var(--color-primary); */
+  /* box-shadow: inset 0 0 0 3px var(--color-primary); */
 }
 .btn--outline:hover,
 .btn--outline:active {
   background-color: #fae5d3;
-  /* color: #333; */
+  /* color: var(--color-grey-5); */
   /* border: 3px solid #8a4c14; */
-  box-shadow: inset 0 0 0 3px #fff;
+  box-shadow: inset 0 0 0 3px #635f5f;
 }
 .btn--form {
-  background-color: #45260a;
+  background-color: var(--color-shades-2);
   color: #fdf2e9;
   align-self: flex-end;
   padding: 1.2rem;
 }
 .btn--form:hover {
   background-color: #fdf2e9;
-  color: #45260a;
+  color: var(--color-shades-2);
 }
 *:focus {
   outline: none;
@@ -180,7 +220,7 @@ body {
 .link:link,
 .link:visited {
   display: inline-block;
-  color: #e67e22;
+  color: var(--color-primary);
   text-decoration: none;
   border-bottom: 1px solid currentColor;
   padding-bottom: 2px;
@@ -188,7 +228,7 @@ body {
 }
 .link:hover,
 .link:active {
-  color: #cf711f;
+  color: var(--color-shades-1);
   border-bottom: 1px solid transparent;
 }
 .list {
@@ -200,7 +240,7 @@ body {
 .list-icon {
   height: 3rem;
   width: 3rem;
-  color: #e67e22;
+  color: var(--color-primary);
 }
 .list-item {
   font-size: 1.8rem;
