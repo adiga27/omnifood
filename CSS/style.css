@@ -15,13 +15,20 @@
   background-color: var(--color-tints-1);
   position: relative;
 }
-.logo-1 {
+.logo {
   height: 2.2rem;
 }
 
 /* *************************** */
 /* NAVIGATION SECTION */
 /* *************************** */
+.header-nav,
+.nav-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4.8rem;
+}
 .main-nav-list {
   list-style: none;
   display: flex;
@@ -68,6 +75,7 @@
   height: 2.4rem;
   width: 2.4rem;
   color: var(--color-grey-5);
+  cursor: pointer;
 }
 /* MOBILE*/
 .btn-mobile-nav {
@@ -173,7 +181,8 @@
 }
 .logos img {
   height: 3.2rem;
-  filter: brightness(0);
+  /* filter: ; */
+  filter: invert(0.5);
   opacity: 50%;
 }
 
@@ -210,7 +219,7 @@
   transform: translate(-50%, -50%);
 }
 .step-img-box::before {
-  background-color: var(--color-tints-1);
+  background-color: var(--color-how-1);
   width: 60%;
   padding-bottom: 60%;
   z-index: -2;
@@ -218,7 +227,7 @@
 .step-img-box::after {
   width: 45%;
   padding-bottom: 45%;
-  background-color: var(--color-tints-2);
+  background-color: var(--color-how-2);
   z-index: -1;
 }
 .step-img {
@@ -238,6 +247,7 @@
 }
 .meal {
   box-shadow: 0 2.4rem 4.8rem var(--color-shadows-1);
+  background-color: var(--color-meal);
   border-radius: 11px;
   overflow: hidden;
   transition: all 0.4s;
@@ -362,12 +372,13 @@
   width: 75%;
 }
 .pricing-plan--starter {
+  background-color: var(--color-price-1);
   justify-self: end;
   border: 2px solid var(--color-tints-1);
   padding: 4.6rem;
 }
 .pricing-plan--complete {
-  background-color: var(--color-tints-1);
+  background-color: var(--color-price-2);
   padding: 4.8rem;
   position: relative;
   overflow: hidden;
@@ -521,9 +532,7 @@
   display: block;
   margin-bottom: 3.2rem;
 }
-.logo-2 {
-  height: 2.2rem;
-}
+
 .logo-col {
   display: flex;
   flex-direction: column;

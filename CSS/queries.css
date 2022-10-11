@@ -120,6 +120,10 @@
     display: block;
     z-index: 9999;
   }
+  .dark-icon {
+    height: 3rem;
+    width: 3rem;
+  }
   .main-nav {
     background-color: var(--color-sticky);
     backdrop-filter: blur(10px);
@@ -144,6 +148,9 @@
     /* 3)Hide it from screen readers */
     visibility: hidden;
   }
+  .nav-open .dark-icon {
+    display: none;
+  }
   .nav-open .main-nav {
     opacity: 1;
     pointer-events: auto;
@@ -156,10 +163,7 @@
   .nav-open .icon-mobile-nav[name="menu-outline"] {
     display: none;
   }
-  .nav-dark {
-    height: 4rem;
-    width: 4rem;
-  }
+
   .main-nav-list {
     flex-direction: column;
     gap: 4.8rem;
@@ -168,9 +172,7 @@
   .main-nav-link:visited {
     font-size: 3rem;
   }
-  .nav-dark {
-    height: 4rem;
-  }
+
   .footer-grid {
     column-gap: 3.2rem;
   }
